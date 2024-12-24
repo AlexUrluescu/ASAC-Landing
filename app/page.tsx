@@ -45,6 +45,7 @@ export default function Home() {
                 backgroundColor: "transparent",
                 fontWeight: 600,
                 color: "white",
+                cursor: "pointer",
               }}
             >
               Login
@@ -57,6 +58,7 @@ export default function Home() {
                 padding: "15px 20px",
                 fontWeight: 600,
                 color: "white",
+                cursor: "pointer",
               }}
             >
               Sign Up free
@@ -114,6 +116,7 @@ export default function Home() {
               fontWeight: 600,
               width: 250,
               color: "white",
+              cursor: "pointer",
             }}
           >
             Register here
