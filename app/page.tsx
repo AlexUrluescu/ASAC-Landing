@@ -19,12 +19,13 @@ export default function Home() {
           <Flex gap={10} align="center">
             <Flex
               style={{
-                padding: "6px 11px",
+                padding: "6px 13px",
                 fontSize: 25,
                 fontWeight: 700,
-                backgroundColor: "#48f7a8",
+                backgroundColor: "transparent",
                 borderRadius: "50%",
-                color: "#007afa",
+                color: "white",
+                border: "1px solid white",
               }}
             >
               A
@@ -50,11 +51,12 @@ export default function Home() {
             </button>
             <button
               style={{
-                border: "none",
+                border: "1px solid white",
                 borderRadius: "20px",
-                backgroundColor: "#48f7a8",
+                backgroundColor: "transparent",
                 padding: "15px 20px",
                 fontWeight: 600,
+                color: "white",
               }}
             >
               Sign Up free
@@ -105,12 +107,13 @@ export default function Home() {
           </span>
           <button
             style={{
-              border: "none",
+              border: "1px solid white",
               borderRadius: "20px",
-              backgroundColor: "#48f7a8",
+              backgroundColor: "transparent",
               padding: "15px 20px",
               fontWeight: 600,
               width: 250,
+              color: "white",
             }}
           >
             Register here
