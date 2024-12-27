@@ -52,9 +52,9 @@ export default function Home() {
             </button>
             <button
               style={{
-                border: "1px solid white",
+                border: "none",
                 borderRadius: "20px",
-                backgroundColor: "transparent",
+                backgroundColor: "#FF821E",
                 padding: "15px 20px",
                 fontWeight: 600,
                 color: "white",
@@ -109,9 +109,9 @@ export default function Home() {
           </span>
           <button
             style={{
-              border: "1px solid white",
+              border: "none",
               borderRadius: "20px",
-              backgroundColor: "transparent",
+              backgroundColor: "#4899F7",
               padding: "15px 20px",
               fontWeight: 600,
               width: 250,
@@ -228,6 +228,85 @@ export default function Home() {
             </Flex>
           </Flex>
         </Flex> */}
+      </Flex>
+      <Flex>
+        <Flex
+          style={{
+            width: "100%",
+            color: "white",
+            // backgroundColor: "#5F4842",
+          }}
+          justify="center"
+        >
+          <Flex
+            style={{ width: "80%", padding: 50 }}
+            vertical
+            gap={50}
+            align="center"
+          >
+            <Flex
+              vertical
+              gap={5}
+              style={{
+                backgroundColor: "#FF821E",
+                padding: "30px 20px",
+                borderRadius: 15,
+              }}
+            >
+              <span style={{ fontSize: 25, fontWeight: 700 }}>What we do</span>
+              <span>
+                We connect clients with professional contractors to meet the
+                full spectrum of each home’s needs. We ensure every project is
+                completed fairly, effectively, and efficiently. From service
+                browsing, to deal-making, to project tracking, we aim for
+                excellence at every step.
+              </span>
+            </Flex>
+            <Flex
+              vertical
+              gap={5}
+              style={{
+                backgroundColor: "#FF821E",
+                padding: "30px 20px",
+                borderRadius: 15,
+              }}
+            >
+              <span style={{ fontSize: 25, fontWeight: 700 }}>
+                How we do it
+              </span>
+              <span>
+                You browse, choose, connect; sign, track, and pay. We make sure
+                to keep it prompt, reliable, and catered to your needs. Because
+                information and transparency are often neglected, we made it a
+                priority.
+              </span>
+            </Flex>
+
+            <Flex
+              vertical
+              gap={5}
+              style={{
+                backgroundColor: "#FF821E",
+                padding: "30px 20px",
+                borderRadius: 15,
+              }}
+            >
+              <span style={{ fontSize: 25, fontWeight: 700 }}>
+                Who we serve
+              </span>
+              <span>
+                Individuals and SMB’s who seek the completion of small-medium
+                sized tasks, recurrent or non-recurrent. Contractors, both
+                individuals and businesses, with expertise in the tangent
+                sub-industries of domestic services, looking to expand their
+                operations, while adhering to our standards.
+              </span>
+            </Flex>
+          </Flex>
+        </Flex>
+      </Flex>
+      <Flex justify="center" align="center" className="footer">
+        @copyrights ASAC
       </Flex>
       {/* <Flex vertical align="center">
         <Flex
