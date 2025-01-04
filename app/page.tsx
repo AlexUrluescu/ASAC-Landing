@@ -1,5 +1,15 @@
-import { Button, Flex } from "antd";
+import { Button, Carousel, Flex } from "antd";
 import Image from "next/image";
+import "antd/dist/reset.css"; // Ensure Ant Design CSS is imported
+import ServiceCarousel from "@/components/ServiceCarousel";
+
+const contentStyle: React.CSSProperties = {
+  margin: 0,
+  height: "100px",
+  color: "#fff",
+  textAlign: "center",
+  background: "#364d79",
+};
 
 export default function Home() {
   return (
@@ -53,7 +63,7 @@ export default function Home() {
             <button
               style={{
                 border: "none",
-                borderRadius: "20px",
+                borderRadius: "10px",
                 backgroundColor: "#FF821E",
                 padding: "15px 20px",
                 fontWeight: 600,
@@ -89,7 +99,12 @@ export default function Home() {
         </Flex>
         <Flex justify="center">
           <Flex
-            style={{ backgroundColor: "#f7f7f7", width: "60%", height: 400 }}
+            style={{
+              backgroundColor: "#f7f7f7",
+              width: "60%",
+              height: 400,
+              borderRadius: 10,
+            }}
             justify="center"
             align="center"
           >
@@ -110,12 +125,12 @@ export default function Home() {
           <button
             style={{
               border: "none",
-              borderRadius: "20px",
-              backgroundColor: "#4899F7",
+              borderRadius: "10px",
+              // backgroundColor: "#4899F7",
               padding: "15px 20px",
               fontWeight: 600,
               width: 250,
-              color: "white",
+              color: "black",
               cursor: "pointer",
             }}
           >
@@ -239,74 +254,142 @@ export default function Home() {
           justify="center"
         >
           <Flex
-            style={{ width: "80%", padding: 50 }}
+            style={{
+              width: "80%",
+              padding: 50,
+              // backgroundColor: "red"
+            }}
             vertical
             gap={50}
             align="center"
           >
             <Flex
-              vertical
-              gap={5}
               style={{
-                backgroundColor: "#FF821E",
-                padding: "30px 20px",
-                borderRadius: 15,
+                // backgroundColor: "blue",
+                padding: "25px 20px",
+                fontSize: 32,
+                fontWeight: 700,
+                color: "black",
+                position: "relative",
               }}
             >
-              <span style={{ fontSize: 25, fontWeight: 700 }}>What we do</span>
-              <span>
-                We connect clients with professional contractors to meet the
-                full spectrum of each home’s needs. We ensure every project is
-                completed fairly, effectively, and efficiently. From service
-                browsing, to deal-making, to project tracking, we aim for
-                excellence at every step.
-              </span>
+              <span>Find a Service</span>
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: "28%",
+                  backgroundColor: " rgb(72, 153, 247)",
+                  content: "",
+                  height: 5,
+                  width: 100,
+                }}
+              ></div>
+            </Flex>
+
+            <ServiceCarousel />
+
+            <Flex
+              style={{
+                backgroundColor: "rgb(72, 153, 247)",
+                borderRadius: 15,
+                width: "80%",
+                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.15)",
+                overflow: "hidden",
+              }}
+            >
+              <Flex
+                vertical
+                gap={20}
+                style={{ backgroundColor: "white", marginLeft: 5, padding: 20 }}
+              >
+                <span
+                  style={{
+                    fontSize: 25,
+                    fontWeight: 700,
+                    color: "rgb(72, 153, 247)",
+                  }}
+                >
+                  What we do
+                </span>
+                <span style={{ color: "black", lineHeight: 1.6 }}>
+                  We connect clients with professional contractors to meet the
+                  full spectrum of each home’s needs. We ensure every project is
+                  completed fairly, effectively, and efficiently. From service
+                  browsing, to deal-making, to project tracking, we aim for
+                  excellence at every step.
+                </span>
+              </Flex>
             </Flex>
             <Flex
-              vertical
-              gap={5}
               style={{
-                backgroundColor: "#FF821E",
-                padding: "30px 20px",
+                backgroundColor: "rgb(72, 153, 247)",
                 borderRadius: 15,
+                width: "80%",
+                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.15)",
+                overflow: "hidden",
               }}
             >
-              <span style={{ fontSize: 25, fontWeight: 700 }}>
-                How we do it
-              </span>
-              <span>
-                You browse, choose, connect; sign, track, and pay. We make sure
-                to keep it prompt, reliable, and catered to your needs. Because
-                information and transparency are often neglected, we made it a
-                priority.
-              </span>
+              <Flex
+                vertical
+                gap={20}
+                style={{ backgroundColor: "white", marginLeft: 5, padding: 20 }}
+              >
+                <span
+                  style={{
+                    fontSize: 25,
+                    fontWeight: 700,
+                    color: "rgb(72, 153, 247)",
+                  }}
+                >
+                  How we do it
+                </span>
+                <span style={{ color: "black", lineHeight: 1.6 }}>
+                  You browse, choose, connect; sign, track, and pay. We make
+                  sure to keep it prompt, reliable, and catered to your needs.
+                  Because information and transparency are often neglected, we
+                  made it a priority.
+                </span>
+              </Flex>
             </Flex>
 
             <Flex
-              vertical
-              gap={5}
               style={{
-                backgroundColor: "#FF821E",
-                padding: "30px 20px",
+                backgroundColor: "rgb(72, 153, 247)",
                 borderRadius: 15,
+                width: "80%",
+                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.15)",
+                overflow: "hidden",
               }}
             >
-              <span style={{ fontSize: 25, fontWeight: 700 }}>
-                Who we serve
-              </span>
-              <span>
-                Individuals and SMB’s who seek the completion of small-medium
-                sized tasks, recurrent or non-recurrent. Contractors, both
-                individuals and businesses, with expertise in the tangent
-                sub-industries of domestic services, looking to expand their
-                operations, while adhering to our standards.
-              </span>
+              <Flex
+                vertical
+                gap={20}
+                style={{ backgroundColor: "white", marginLeft: 5, padding: 20 }}
+              >
+                <span
+                  style={{
+                    fontSize: 25,
+                    fontWeight: 700,
+                    color: "rgb(72, 153, 247)",
+                  }}
+                >
+                  Who we serve
+                </span>
+                <span style={{ color: "black", lineHeight: 1.6 }}>
+                  Individuals and SMB’s who seek the completion of small-medium
+                  sized tasks, recurrent or non-recurrent. Contractors, both
+                  individuals and businesses, with expertise in the tangent
+                  sub-industries of domestic services, looking to expand their
+                  operations, while adhering to our standards.
+                </span>
+              </Flex>
             </Flex>
           </Flex>
         </Flex>
       </Flex>
       <Flex justify="center" align="center" className="footer">
-        @copyrights ASAC
+        © 2025 ASAC. All rights reserved
       </Flex>
       {/* <Flex vertical align="center">
         <Flex
