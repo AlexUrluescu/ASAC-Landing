@@ -1,7 +1,6 @@
 "use client";
 import { Flex } from "antd";
-import { log } from "console";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const ServiceCarousel = () => {
   const services = [
@@ -15,47 +14,23 @@ const ServiceCarousel = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Handles navigation to the next set of items
-  const handleNext = () => {
-    if (currentIndex < services.length - 4) {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
+  // Automatically move the carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex < services.length - 4 ? prevIndex + 1 : 0
+      );
+    }, 3000); // Change slides every 3 seconds
 
-  // Handles navigation to the previous set of items
-  const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
-
-  console.log("currentIndex", currentIndex);
+    return () => clearInterval(interval); // Cleanup the interval on unmount
+  }, [services.length]);
 
   return (
     <Flex style={{ width: "100%" }}>
-      <Flex style={{ width: 50, padding: "0px 10px" }}>
-        {currentIndex !== 0 ? (
-          <button
-            onClick={handlePrev}
-            disabled={currentIndex === 0}
-            style={{
-              cursor: currentIndex === 0 ? "not-allowed" : "pointer",
-              backgroundColor: "transparent",
-              border: "none",
-              fontSize: 30,
-              color: "black",
-            }}
-          >
-            ←
-          </button>
-        ) : null}
-      </Flex>
-
       <div
         style={{
           overflow: "hidden",
           margin: "0 auto",
-          //   backgroundColor: "red",
         }}
       >
         {/* Services Wrapper */}
@@ -88,27 +63,6 @@ const ServiceCarousel = () => {
           ))}
         </div>
       </div>
-
-      <Flex style={{ width: 50, padding: "0px 10px" }}>
-        {currentIndex !== 2 ? (
-          <button
-            onClick={handleNext}
-            disabled={currentIndex === services.length - 4}
-            style={{
-              cursor:
-                currentIndex === services.length - 4
-                  ? "not-allowed"
-                  : "pointer",
-              backgroundColor: "transparent",
-              border: "none",
-              fontSize: 30,
-              color: "black",
-            }}
-          >
-            →
-          </button>
-        ) : null}
-      </Flex>
     </Flex>
   );
 };
