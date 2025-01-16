@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Lexend } from "next/font/google";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -19,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={lexend.className}>
-      <body>{children}</body>
+      <AntdRegistry>
+        <body>{children}</body>
+      </AntdRegistry>
     </html>
   );
 }

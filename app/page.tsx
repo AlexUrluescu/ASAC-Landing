@@ -1,7 +1,8 @@
-import { Button, Carousel, Flex } from "antd";
+import { Button, Carousel, Flex, Modal } from "antd";
 import Image from "next/image";
-import "antd/dist/reset.css"; // Ensure Ant Design CSS is imported
+import "antd/dist/reset.css";
 import ServiceCarousel from "@/components/ServiceCarousel";
+import CustomModal from "@/components/CustomModal";
 
 const contentStyle: React.CSSProperties = {
   margin: 0,
@@ -27,7 +28,8 @@ export default function Home() {
             align="center"
             justify="space-between"
           >
-            <Flex gap={10} align="center">
+            <Image src={"/logo2.png"} alt="logo" width={40} height={50}></Image>
+            {/* <Flex gap={10} align="center">
               <Flex
                 style={{
                   padding: "6px 13px",
@@ -44,12 +46,12 @@ export default function Home() {
               <span style={{ fontSize: 20, fontWeight: 600, color: "white" }}>
                 ASAC
               </span>
-            </Flex>
+            </Flex> */}
             {/* <Flex style={{ color: "white" }} gap={30}>
             <span>Home</span> <span>About us</span> <span>Our Team</span>{" "}
             <span>Pricing</span> <span>Blog</span> <span>Contact</span>
           </Flex> */}
-            <Flex gap={20}>
+            {/* <Flex gap={20}>
               <button
                 style={{
                   border: "none",
@@ -74,10 +76,12 @@ export default function Home() {
               >
                 Sign Up free
               </button>
-            </Flex>
+            </Flex> */}
+            {/* <Button>Contact Us</Button> */}
+            <CustomModal buttonText="Contact Us" showInfo={true} />
           </Flex>
         </Flex>
-        <Flex style={{ padding: "30px 0" }} gap={30} vertical>
+        <Flex style={{ padding: "30px 0", height: "100%" }} gap={30} vertical>
           <Flex vertical align="center">
             <Flex
               vertical
@@ -87,7 +91,11 @@ export default function Home() {
             >
               <Flex
                 justify="center"
-                style={{ fontSize: 55, textAlign: "center" }}
+                style={{
+                  fontSize: 55,
+                  textAlign: "center",
+                  fontWeight: 600,
+                }}
               >
                 Done right, every time.
               </Flex>
@@ -99,12 +107,12 @@ export default function Home() {
               </Flex>
             </Flex>
           </Flex>
-          <Flex justify="center">
+          <Flex style={{ height: "100%" }} justify="center">
             <Flex
               style={{
                 backgroundColor: "#f7f7f7",
                 width: "60%",
-                height: 400,
+                height: "100%",
                 borderRadius: 10,
               }}
               justify="center"
@@ -129,7 +137,9 @@ export default function Home() {
             <span style={{ fontSize: 23, color: "white", fontWeight: 600 }}>
               Coming soon ...
             </span>
-            <button
+
+            <CustomModal buttonText="Register here" showInfo={false} />
+            {/* <button
               style={{
                 border: "none",
                 borderRadius: "10px",
@@ -141,8 +151,8 @@ export default function Home() {
                 cursor: "pointer",
               }}
             >
-              Register here
-            </button>
+             
+            </button> */}
           </Flex>
           {/* <Flex>
           <Flex gap={30} align="center" style={{ width: "25%" }} vertical>
