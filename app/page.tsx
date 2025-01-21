@@ -28,7 +28,18 @@ export default function Home() {
             align="center"
             justify="space-between"
           >
-            <Image src={"/logo2.png"} alt="logo" width={40} height={50}></Image>
+            {/* <Image src={"/logo2.png"} alt="logo" width={40} height={50}></Image> */}
+            <span
+              style={{
+                padding: 0,
+                fontSize: 25,
+                fontWeight: 700,
+                color: "white",
+                // background: "blue",
+              }}
+            >
+              ASAC
+            </span>
             {/* <Flex gap={10} align="center">
               <Flex
                 style={{
