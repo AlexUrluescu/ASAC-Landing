@@ -1,4 +1,4 @@
-import { Button, Carousel, Flex, Modal } from "antd";
+import { Flex } from "antd";
 import Image from "next/image";
 import "antd/dist/reset.css";
 import ServiceCarousel from "@/components/ServiceCarousel";
@@ -94,12 +94,7 @@ export default function Home() {
         </Flex>
         <Flex style={{ padding: "30px 0", height: "100%" }} gap={30} vertical>
           <Flex vertical align="center">
-            <Flex
-              vertical
-              align="center"
-              gap={20}
-              style={{ width: "60%", color: "white" }}
-            >
+            <Flex className="title-container" vertical align="center" gap={20}>
               <Flex
                 justify="center"
                 style={{
@@ -119,18 +114,7 @@ export default function Home() {
             </Flex>
           </Flex>
           <Flex style={{ height: "100%" }} justify="center">
-            <Flex
-              style={{
-                backgroundColor: "#f7f7f7",
-                width: "60%",
-                height: "100%",
-                borderRadius: 10,
-              }}
-              justify="center"
-              align="center"
-            >
-              Demo
-            </Flex>
+            <div className="demo">Demo</div>
           </Flex>
           <Flex
             align="center"
@@ -139,6 +123,7 @@ export default function Home() {
             gap={20}
           >
             <Image
+              className="arrow"
               style={{ position: "absolute", top: -20, left: "39%" }}
               src={"/image.png"}
               width={30}
@@ -282,16 +267,7 @@ export default function Home() {
           }}
           justify="center"
         >
-          <Flex
-            style={{
-              width: "80%",
-              padding: 50,
-              // backgroundColor: "red"
-            }}
-            vertical
-            gap={50}
-            align="center"
-          >
+          <Flex className="content-container" vertical gap={50} align="center">
             <Flex
               style={{
                 // backgroundColor: "blue",
@@ -318,15 +294,7 @@ export default function Home() {
 
             <ServiceCarousel />
 
-            <Flex
-              style={{
-                backgroundColor: "rgb(72, 153, 247)",
-                borderRadius: 15,
-                width: "80%",
-                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.15)",
-                overflow: "hidden",
-              }}
-            >
+            <Flex className="qa-container">
               <Flex
                 vertical
                 gap={20}
@@ -350,15 +318,7 @@ export default function Home() {
                 </span>
               </Flex>
             </Flex>
-            <Flex
-              style={{
-                backgroundColor: "rgb(72, 153, 247)",
-                borderRadius: 15,
-                width: "80%",
-                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.15)",
-                overflow: "hidden",
-              }}
-            >
+            <Flex className="qa-container">
               <Flex
                 vertical
                 gap={20}
@@ -382,15 +342,7 @@ export default function Home() {
               </Flex>
             </Flex>
 
-            <Flex
-              style={{
-                backgroundColor: "rgb(72, 153, 247)",
-                borderRadius: 15,
-                width: "80%",
-                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.15)",
-                overflow: "hidden",
-              }}
-            >
+            <Flex className="qa-container">
               <Flex
                 vertical
                 gap={20}
@@ -417,9 +369,7 @@ export default function Home() {
           </Flex>
         </Flex>
       </Flex>
-      <Flex justify="center" align="center" className="footer">
-        © 2025 ASAC. All rights reserved
-      </Flex>
+      <div className="footer">© 2025 ASAC. All rights reserved</div>
     </div>
   );
 }

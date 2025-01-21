@@ -98,7 +98,14 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
     <>
       {contextHolder}
       <Button
-        style={{ backgroundColor: "white", color: "black", fontWeight: 600 }}
+        style={{
+          backgroundColor: "white",
+          color: "black",
+          fontWeight: 600,
+          fontSize: 15,
+          width: 140,
+          height: 37,
+        }}
         type="primary"
         onClick={showModal}
       >

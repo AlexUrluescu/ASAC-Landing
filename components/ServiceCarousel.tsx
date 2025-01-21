@@ -13,17 +13,45 @@ const ServiceCarousel = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(4);
+
+  useEffect(() => {
+    if (window.innerWidth <= 525) {
+      console.log("intra");
+    }
+  }, []);
 
   // Automatically move the carousel
   useEffect(() => {
+    const numberSteps = window.innerWidth <= 525 ? 2 : 0;
+
+    console.log("test", numberSteps);
+
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex < services.length - 4 ? prevIndex + 1 : 0
+        prevIndex < services.length + numberSteps - 4 ? prevIndex + 1 : 0
       );
-    }, 3000); // Change slides every 3 seconds
+    }, 3000);
 
-    return () => clearInterval(interval); // Cleanup the interval on unmount
+    return () => clearInterval(interval);
   }, [services.length]);
+
+  useEffect(() => {
+    console.log("currentIndex", currentIndex);
+  }, [currentIndex]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const checkScreenSize = () => {
+        setIsMobile(window.innerWidth <= 525 ? 1.7 : 4);
+      };
+
+      checkScreenSize(); // Initial check
+      window.addEventListener("resize", checkScreenSize); // Listen for resize events
+
+      return () => window.removeEventListener("resize", checkScreenSize); // Cleanup on unmount
+    }
+  }, []);
 
   return (
     <Flex style={{ width: "100%" }}>
@@ -33,22 +61,15 @@ const ServiceCarousel = () => {
           margin: "0 auto",
         }}
       >
-        {/* Services Wrapper */}
         <div
+          className="carouser-item-container"
           style={{
-            display: "flex",
-            transform: `translateX(-${currentIndex * (100 / 4)}%)`,
-            transition: "transform 0.3s ease-in-out",
+            transform: `translateX(-${currentIndex * (100 / isMobile)}%)`,
+            transition: "transform 0.5s ease-in-out",
           }}
         >
           {services.map((service, index) => (
-            <Flex
-              vertical
-              gap={10}
-              align="center"
-              key={index}
-              className="service"
-            >
+            <div key={index} className="service">
               <span style={{ fontSize: 40 }}>{service.icon}</span>
               <span
                 style={{
@@ -59,7 +80,7 @@ const ServiceCarousel = () => {
               >
                 {service.label}
               </span>
-            </Flex>
+            </div>
           ))}
         </div>
       </div>
