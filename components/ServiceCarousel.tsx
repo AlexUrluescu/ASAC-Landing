@@ -16,16 +16,7 @@ const ServiceCarousel = () => {
   const [isMobile, setIsMobile] = useState(4);
 
   useEffect(() => {
-    if (window.innerWidth <= 525) {
-      console.log("intra");
-    }
-  }, []);
-
-  // Automatically move the carousel
-  useEffect(() => {
     const numberSteps = window.innerWidth <= 525 ? 2 : 0;
-
-    console.log("test", numberSteps);
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
@@ -37,19 +28,15 @@ const ServiceCarousel = () => {
   }, [services.length]);
 
   useEffect(() => {
-    console.log("currentIndex", currentIndex);
-  }, [currentIndex]);
-
-  useEffect(() => {
     if (typeof window !== "undefined") {
       const checkScreenSize = () => {
         setIsMobile(window.innerWidth <= 525 ? 1.7 : 4);
       };
 
-      checkScreenSize(); // Initial check
-      window.addEventListener("resize", checkScreenSize); // Listen for resize events
+      checkScreenSize();
+      window.addEventListener("resize", checkScreenSize);
 
-      return () => window.removeEventListener("resize", checkScreenSize); // Cleanup on unmount
+      return () => window.removeEventListener("resize", checkScreenSize);
     }
   }, []);
 

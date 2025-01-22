@@ -35,7 +35,9 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
     setContent("");
   };
 
-  const showModal = () => setIsModalOpen(true);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
   const handleOk = async () => {
     setIsModalOpen(false);
 
@@ -45,7 +47,7 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
         info: content,
       };
 
-      const res = await fetch("http://localhost:8000/emailInfoRoutes", {
+      const res = await fetch("https://asac-be.onrender.com/emailInfoRoutes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -57,13 +59,11 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
         error();
       }
 
-      const data = await res.json();
-      console.log("data", data);
-
+      setEmail("");
       success();
       resetForm();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
   const handleCancel = () => {
@@ -74,17 +74,13 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
   const handleInputEmaailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
 
-    // Regular expression for basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     setEmail(value);
 
     if (emailRegex.test(value)) {
-      // Update the email state if valid
       setCorrectEmail(true);
     } else {
-      console.log("Invalid email format");
       setCorrectEmail(false);
-      // Optionally, you could set an error state or display a message to the user
     }
   };
 
@@ -120,22 +116,43 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
         onOk={handleOk}
         onCancel={handleCancel}
         okText="Send"
-        okButtonProps={{ disabled: email === "" || content === "" }}
+        okButtonProps={{ disabled: email === "" || !correctEmail }}
       >
         <Flex style={{ padding: "20px 0px" }} vertical gap={20}>
           <Input
+            className="inputs"
+            value={email}
             style={{
               border:
                 email === ""
-                  ? "auto"
+                  ? "1px solid #d9d9d9"
                   : correctEmail
-                  ? "2px solid green"
-                  : "2px solid red",
+                  ? "1px solid green"
+                  : "1px solid red",
+              outline: "none",
+            }}
+            onFocus={(e) => {
+              if (email !== "") {
+                e.target.style.border = correctEmail
+                  ? "1px solid green"
+                  : "1px solid red";
+              } else {
+                e.target.style.border = "1px solid #096dd9";
+              }
+            }}
+            onBlur={(e) => {
+              if (email !== "") {
+                e.target.style.border = correctEmail
+                  ? "1px solid green"
+                  : "1px solid red";
+              } else {
+                e.target.style.border = "1px solid #d9d9d9";
+              }
             }}
             onChange={(e) => handleInputEmaailChange(e)}
             placeholder="Your email"
-            value={email}
           />
+
           {showInfo ? (
             <TextArea
               onChange={(e) => handleInputContentChange(e)}
