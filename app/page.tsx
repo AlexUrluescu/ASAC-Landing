@@ -53,7 +53,14 @@ export default function Home() {
             </Flex>
           </Flex>
           <Flex style={{ height: "100%" }} justify="center">
-            <div className="demo" style={{ position: "relative" }}>
+            <div
+              className="demo"
+              style={{
+                position: "relative",
+                borderRadius: 10,
+                overflow: "hidden",
+              }}
+            >
               <video
                 src="/ASAC-Trailer.mp4"
                 style={{
