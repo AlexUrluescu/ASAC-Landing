@@ -4,14 +4,6 @@ import "antd/dist/reset.css";
 import ServiceCarousel from "@/components/ServiceCarousel";
 import CustomModal from "@/components/CustomModal";
 
-const contentStyle: React.CSSProperties = {
-  margin: 0,
-  height: "100px",
-  color: "#fff",
-  textAlign: "center",
-  background: "#364d79",
-};
-
 export default function Home() {
   return (
     <div>
@@ -21,74 +13,21 @@ export default function Home() {
             className="wrapper-nav"
             style={{
               width: "75%",
-              // backgroundColor: "blue",
               padding: "15px 0",
-              // borderBottom: "1px solid white",
             }}
             align="center"
             justify="space-between"
           >
-            {/* <Image src={"/logo2.png"} alt="logo" width={40} height={50}></Image> */}
             <span
               style={{
                 padding: 0,
                 fontSize: 25,
                 fontWeight: 700,
                 color: "white",
-                // background: "blue",
               }}
             >
               ASAC
             </span>
-            {/* <Flex gap={10} align="center">
-              <Flex
-                style={{
-                  padding: "6px 13px",
-                  fontSize: 25,
-                  fontWeight: 700,
-                  backgroundColor: "transparent",
-                  borderRadius: "50%",
-                  color: "white",
-                  border: "1px solid white",
-                }}
-              >
-                A
-              </Flex>{" "}
-              <span style={{ fontSize: 20, fontWeight: 600, color: "white" }}>
-                ASAC
-              </span>
-            </Flex> */}
-            {/* <Flex style={{ color: "white" }} gap={30}>
-            <span>Home</span> <span>About us</span> <span>Our Team</span>{" "}
-            <span>Pricing</span> <span>Blog</span> <span>Contact</span>
-          </Flex> */}
-            {/* <Flex gap={20}>
-              <button
-                style={{
-                  border: "none",
-                  backgroundColor: "transparent",
-                  fontWeight: 600,
-                  color: "white",
-                  cursor: "pointer",
-                }}
-              >
-                Login
-              </button>
-              <button
-                style={{
-                  border: "none",
-                  borderRadius: "10px",
-                  backgroundColor: "#FF821E",
-                  padding: "15px 20px",
-                  fontWeight: 600,
-                  color: "white",
-                  cursor: "pointer",
-                }}
-              >
-                Sign Up free
-              </button>
-            </Flex> */}
-            {/* <Button>Contact Us</Button> */}
             <CustomModal buttonText="Contact Us" showInfo={true} />
           </Flex>
         </Flex>
@@ -114,7 +53,23 @@ export default function Home() {
             </Flex>
           </Flex>
           <Flex style={{ height: "100%" }} justify="center">
-            <div className="demo">Demo</div>
+            <div className="demo" style={{ position: "relative" }}>
+              <video
+                src="/ASAC-Trailer.mp4"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                }}
+                autoPlay
+                loop
+                muted
+                playsInline
+              ></video>
+            </div>
           </Flex>
           <Flex
             align="center"
@@ -124,138 +79,18 @@ export default function Home() {
           >
             <Image
               className="arrow"
-              style={{ position: "absolute", top: -20, left: "39%" }}
+              style={{ position: "absolute", top: -20, left: "41%" }}
               src={"/image.png"}
               width={30}
               height={65}
               alt=""
             />
-            <span style={{ fontSize: 23, color: "white", fontWeight: 600 }}>
+            <span style={{ fontSize: 25, color: "white", fontWeight: 600 }}>
               Coming soon ...
             </span>
 
             <CustomModal buttonText="Register here" showInfo={false} />
-            {/* <button
-              style={{
-                border: "none",
-                borderRadius: "10px",
-                // backgroundColor: "#4899F7",
-                padding: "15px 20px",
-                fontWeight: 600,
-                width: 250,
-                color: "black",
-                cursor: "pointer",
-              }}
-            >
-             
-            </button> */}
           </Flex>
-          {/* <Flex>
-          <Flex gap={30} align="center" style={{ width: "25%" }} vertical>
-            <Flex>
-              <Image
-                style={{ borderRadius: 20 }}
-                src={"/poza1.png"}
-                height={280}
-                width={280}
-                alt=""
-              />
-            </Flex>
-            <Flex justify="center" style={{ color: "white" }}>
-              <Flex gap={7} style={{ padding: 10 }} vertical>
-                <span style={{ fontSize: 30 }}>15+</span>
-                <span style={{ fontSize: 12 }}>Years of experience</span>
-              </Flex>
-              <Flex gap={7} style={{ padding: 10 }} vertical>
-                <span style={{ fontSize: 30 }}>84k</span>
-                <span style={{ fontSize: 12 }}>Customers worldwide</span>
-              </Flex>
-            </Flex>
-          </Flex>
-
-          <Flex gap={20} align="center" style={{ width: "50%" }} vertical>
-            <Flex align="center" gap={50}>
-              <button
-                style={{
-                  border: "none",
-                  borderRadius: "20px",
-                  backgroundColor: "#48f7a8",
-                  padding: "15px 20px",
-                  fontWeight: 600,
-                }}
-              >
-                Get Trial Project
-              </button>
-              <span style={{ color: "white" }}>Watch Demo</span>
-            </Flex>
-            <Flex>
-              {" "}
-              <Image
-                style={{ borderRadius: 20 }}
-                src={"/poza2.png"}
-                height={370}
-                width={600}
-                alt=""
-              />
-            </Flex>
-          </Flex>
-
-          <Flex gap={30} align="center" style={{ width: "25%" }} vertical>
-            <Flex>
-              <Image
-                style={{ borderRadius: 20 }}
-                src={"/poza3.png"}
-                height={280}
-                width={280}
-                alt=""
-              />
-            </Flex>
-            <Flex justify="center" style={{ color: "white" }}>
-              <Flex style={{ padding: 10, position: "relative" }}>
-                <Image
-                  style={{
-                    borderRadius: "50%",
-                    objectFit: "cover",
-                    marginRight: -15, // Overlaps the next image
-                    zIndex: 3, // Ensures proper layering
-                  }}
-                  src={"/om1.png"}
-                  height={50}
-                  width={50}
-                  alt=""
-                />
-                <Image
-                  style={{
-                    borderRadius: "50%",
-                    objectFit: "cover",
-                    marginRight: -15, // Overlaps the next image
-                    zIndex: 2, // Slightly lower in the stack
-                  }}
-                  src={"/om2.png"}
-                  height={50}
-                  width={50}
-                  alt=""
-                />
-                <Image
-                  style={{
-                    borderRadius: "50%",
-                    objectFit: "cover",
-                    zIndex: 1, // Lowest in the stack
-                  }}
-                  src={"/om3.jpg"}
-                  height={50}
-                  width={50}
-                  alt=""
-                />
-              </Flex>
-
-              <Flex gap={7} style={{ padding: 10 }} vertical>
-                <span style={{ fontSize: 30 }}>140k</span>
-                <span style={{ fontSize: 12 }}>Happy Customers</span>
-              </Flex>
-            </Flex>
-          </Flex>
-        </Flex> */}
         </Flex>
       </Flex>
       <Flex>
@@ -263,14 +98,12 @@ export default function Home() {
           style={{
             width: "100%",
             color: "white",
-            // backgroundColor: "#5F4842",
           }}
           justify="center"
         >
           <Flex className="content-container" vertical gap={50} align="center">
             <Flex
               style={{
-                // backgroundColor: "blue",
                 padding: "25px 20px",
                 fontSize: 32,
                 fontWeight: 700,
