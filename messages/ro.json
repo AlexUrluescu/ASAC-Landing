@@ -1,0 +1,41 @@
+{
+  "home": {
+    "title": "Făcut corect, de fiecare dată.",
+    "description": "Platforma noastră de servicii interne te conectează instantaneu cu profesioniști calificați — fără speculații, prețuri clare și progres transparent — asigurând servicii fără stres, la îndemâna ta.",
+    "buttons": {
+      "contact": "Contactează-ne",
+      "register": "Înregistrează-te",
+      "cancel": "Anulează",
+      "send": "Trimite"
+    },
+    "placeholders": {
+      "yourEmail": "Email-ul tău",
+      "tellUs": "Scrie-ne"
+    },
+    "coming": "În curând",
+    "subTitle": "Găsește un serviciu",
+    "services": {
+      "label1": "Îmbunătățiri Casnice",
+      "label2": "Mutări și Organizare",
+      "label3": "Servicii de Curățenie a Locuinței",
+      "label4": "Reparații și Întreținere",
+      "label5": "Servicii de Combatere a Dăunătorilor",
+      "label6": "Grădinărit și Îngrijire a Gazonului"
+    },
+    "qas": {
+      "qa1": {
+        "title": "Ce facem",
+        "description": "Conectăm clienții cu antreprenori profesioniști pentru a satisface întreaga gamă de nevoi ale fiecărei locuințe. Ne asigurăm că fiecare proiect este finalizat corect, eficient și eficace. De la navigarea serviciilor, la negocierea ofertei, până la urmărirea proiectului, țintim excelența la fiecare pas."
+      },
+      "qa2": {
+        "title": "Cum o facem",
+        "description": "Tu navighezi, alegi, te conectezi; semnezi, urmărești și plătești. Ne asigurăm că procesul este prompt, fiabil și adaptat nevoilor tale. Deoarece informațiile și transparența sunt adesea neglijate, le-am făcut o prioritate."
+      },
+      "qa3": {
+        "title": "Cui ne adresăm",
+        "description": "Persoanelor fizice și IMM-uri care doresc finalizarea unor sarcini mici și medii, recurente sau nerecurente. Antreprenori, atât persoane fizice, cât și afaceri, cu expertiză în subdomeniile conexe serviciilor interne, care doresc să-și extindă operațiunile, respectându-ne standardele."
+      }
+    },
+    "allRights": "Toate drepturile rezervate"
+  }
+}

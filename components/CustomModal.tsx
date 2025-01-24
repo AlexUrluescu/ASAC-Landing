@@ -1,6 +1,8 @@
 "use client";
 import { ChangeEvent, useState } from "react";
 import { Modal, Button, Input, Flex, message } from "antd";
+import { useTranslations } from "next-intl";
+import "../app/globals.css";
 
 const { TextArea } = Input;
 
@@ -10,6 +12,7 @@ interface ICustomModal {
 }
 
 const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
+  const t = useTranslations("home");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [email, setEmail] = useState<string>("");
   const [content, setContent] = useState<string>("");
@@ -94,14 +97,8 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
     <>
       {contextHolder}
       <Button
-        style={{
-          backgroundColor: "white",
-          color: "black",
-          fontWeight: 600,
-          fontSize: 15,
-          width: 140,
-          height: 37,
-        }}
+        style={{}}
+        className="triger-button"
         type="primary"
         onClick={showModal}
       >
@@ -115,7 +112,8 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
-        okText="Send"
+        okText={t("buttons.send")}
+        cancelText={t("buttons.cancel")}
         okButtonProps={{ disabled: email === "" || !correctEmail }}
       >
         <Flex style={{ padding: "20px 0px" }} vertical gap={20}>
@@ -150,14 +148,14 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
               }
             }}
             onChange={(e) => handleInputEmaailChange(e)}
-            placeholder="Your email"
+            placeholder={t("placeholders.yourEmail")}
           />
 
           {showInfo ? (
             <TextArea
               onChange={(e) => handleInputContentChange(e)}
               style={{ height: 100 }}
-              placeholder="Tell us"
+              placeholder={t("placeholders.tellUs")}
               value={content}
             />
           ) : null}

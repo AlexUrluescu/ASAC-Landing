@@ -60,6 +60,7 @@ body {
 
 .wrapper-nav {
   border-bottom: 1px solid rgba(255, 255, 255, 0.637);
+  width: 75%;
 }
 
 .arrow {
@@ -83,6 +84,12 @@ body {
   color: white;
 }
 
+.title {
+  font-size: 55px;
+  text-align: center;
+  font-weight: 600;
+}
+
 .content-container {
   padding: 50px;
   width: 80%;
@@ -102,6 +109,28 @@ body {
   /* overflow-x: auto; */
 }
 
+.triger-button {
+  height: 37px !important;
+  background-color: white !important;
+  color: black !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  width: 140px !important;
+}
+
+.triger-button:hover {
+  border-color: #0958d9;
+  color: #0958d9 !important;
+}
+
+.subTitle {
+  padding: 25px 20px;
+  font-size: 32px;
+  font-weight: 700;
+  color: black;
+  position: relative;
+}
+
 @media (max-width: 970px) {
   .arrow {
     display: none;
@@ -114,7 +143,7 @@ body {
   .demo {
     height: 80%;
     width: 80%;
-    margin-top: 30px;
+    /* margin-top: 30px; */
   }
 
   .title-container {
@@ -134,5 +163,25 @@ body {
   .service {
     min-width: 52%;
     padding: 10px;
+  }
+}
+
+@media (max-width: 440px) {
+  .wrapper-nav {
+    width: 85%;
+  }
+  .select {
+    height: 30px !important;
+  }
+
+  .triger-button {
+    height: 30px !important;
+  }
+
+  .title {
+    font-size: 41px;
+  }
+  .subTitle {
+    font-size: 30px;
   }
 }

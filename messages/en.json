@@ -1,0 +1,41 @@
+{
+  "home": {
+    "title": "Done right, every time.",
+    "description": "Our domestic services platform instantly connects you with skilled professionals — no guesswork, clear prices, and transparent progress — ensuring stress-free services at your fingertips.",
+    "buttons": {
+      "contact": "Contact us",
+      "register": "Register here",
+      "cancel": "Cancel",
+      "send": "Send"
+    },
+    "placeholders": {
+      "yourEmail": "Your email",
+      "tellUs": "Tell us"
+    },
+    "coming": "Coming soon",
+    "subTitle": "Find a Service",
+    "services": {
+      "label1": "Home Improvement",
+      "label2": "Moving and Organizing",
+      "label3": "Household Cleaning Services",
+      "label4": "Repairs and Maintenance",
+      "label5": "Pest Control Services",
+      "label6": "Gardening and Lawn Care"
+    },
+    "qas": {
+      "qa1": {
+        "title": "What we do",
+        "description": "We connect clients with professional contractors to meet the full spectrum of each home’s needs. We ensure every project is completed fairly, effectively, and efficiently. From service browsing, to deal-making, to project tracking, we aim for excellence at every step."
+      },
+      "qa2": {
+        "title": "How we do it",
+        "description": "You browse, choose, connect; sign, track, and pay. We make sure to keep it prompt, reliable, and catered to your needs. Because information and transparency are often neglected, we made it a priority."
+      },
+      "qa3": {
+        "title": "Who we serve",
+        "description": "Individuals and SMB’s who seek the completion of small-medium sized tasks, recurrent or non-recurrent. Contractors, both individuals and businesses, with expertise in the tangent sub-industries of domestic services, looking to expand their operations, while adhering to our standards."
+      }
+    },
+    "allRights": "All rights reserved"
+  }
+}

@@ -1,15 +1,17 @@
 "use client";
 import { Flex } from "antd";
+import { useTranslations } from "next-intl";
 import React, { useState, useEffect } from "react";
 
 const ServiceCarousel = () => {
+  const t = useTranslations("home");
   const services = [
-    { icon: "🏠", label: "Home Improvement" },
-    { icon: "📦", label: "Moving and Organizing" },
-    { icon: "🧹", label: "Household Cleaning Services" },
-    { icon: "🔧", label: "Repairs and Maintenance" },
-    { icon: "🐜", label: "Pest Control Services" },
-    { icon: "🌿", label: "Gardening and Lawn Care" },
+    { icon: "🏠", label: `${t("services.label1")}` },
+    { icon: "📦", label: `${t("services.label2")}` },
+    { icon: "🧹", label: `${t("services.label3")}` },
+    { icon: "🔧", label: `${t("services.label4")}` },
+    { icon: "🐜", label: `${t("services.label5")}` },
+    { icon: "🌿", label: `${t("services.label6")}` },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -63,6 +65,7 @@ const ServiceCarousel = () => {
                   color: "black",
                   display: "block",
                   textAlign: "center",
+                  fontWeight: 500,
                 }}
               >
                 {service.label}

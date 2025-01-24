@@ -3,8 +3,11 @@ import Image from "next/image";
 import "antd/dist/reset.css";
 import ServiceCarousel from "@/components/ServiceCarousel";
 import CustomModal from "@/components/CustomModal";
+import { useTranslations } from "next-intl";
+import LocalSwitcher from "@/components/LocalSwitcher";
 
 export default function Home() {
+  const t = useTranslations("home");
   return (
     <div>
       <Flex vertical className="main-container">
@@ -12,7 +15,7 @@ export default function Home() {
           <Flex
             className="wrapper-nav"
             style={{
-              width: "75%",
+              // width: "75%",
               padding: "15px 0",
             }}
             align="center"
@@ -28,37 +31,32 @@ export default function Home() {
             >
               ASAC
             </span>
-            <CustomModal buttonText="Contact Us" showInfo={true} />
+            <Flex align="center" gap={10}>
+              <LocalSwitcher />
+              <CustomModal buttonText={t("buttons.contact")} showInfo={true} />
+            </Flex>
           </Flex>
         </Flex>
         <Flex style={{ padding: "30px 0", height: "100%" }} gap={30} vertical>
           <Flex vertical align="center">
             <Flex className="title-container" vertical align="center" gap={20}>
-              <Flex
-                justify="center"
-                style={{
-                  fontSize: 55,
-                  textAlign: "center",
-                  fontWeight: 600,
-                }}
-              >
-                Done right, every time.
+              <Flex className="title" justify="center">
+                {t("title")}
               </Flex>
               <Flex style={{ textAlign: "center", lineHeight: 1.6 }}>
-                Our domestic services platform instantly connects you with
-                skilled professionals — no guesswork, clear prices, and
-                transparent progress — ensuring stress-free services at your
-                fingertips.
+                {t("description")}
               </Flex>
             </Flex>
           </Flex>
-          <Flex style={{ height: "100%" }} justify="center">
+          <Flex style={{ height: "100%" }} justify="center" align="center">
             <div
               className="demo"
               style={{
                 position: "relative",
                 borderRadius: 10,
                 overflow: "hidden",
+                backgroundColor: "red",
+                height: "100%",
               }}
             >
               <video
@@ -93,10 +91,10 @@ export default function Home() {
               alt=""
             />
             <span style={{ fontSize: 25, color: "white", fontWeight: 600 }}>
-              Coming soon ...
+              {t("coming")} ...
             </span>
 
-            <CustomModal buttonText="Register here" showInfo={false} />
+            <CustomModal buttonText={t("buttons.register")} showInfo={false} />
           </Flex>
         </Flex>
       </Flex>
@@ -109,16 +107,8 @@ export default function Home() {
           justify="center"
         >
           <Flex className="content-container" vertical gap={50} align="center">
-            <Flex
-              style={{
-                padding: "25px 20px",
-                fontSize: 32,
-                fontWeight: 700,
-                color: "black",
-                position: "relative",
-              }}
-            >
-              <span>Find a Service</span>
+            <div className="subTitle">
+              <span> {t("subTitle")}</span>
               <div
                 style={{
                   position: "absolute",
@@ -130,7 +120,7 @@ export default function Home() {
                   width: 100,
                 }}
               ></div>
-            </Flex>
+            </div>
 
             <ServiceCarousel />
 
@@ -147,14 +137,10 @@ export default function Home() {
                     color: "rgb(72, 153, 247)",
                   }}
                 >
-                  What we do
+                  {t("qas.qa1.title")}
                 </span>
                 <span style={{ color: "black", lineHeight: 1.6 }}>
-                  We connect clients with professional contractors to meet the
-                  full spectrum of each home’s needs. We ensure every project is
-                  completed fairly, effectively, and efficiently. From service
-                  browsing, to deal-making, to project tracking, we aim for
-                  excellence at every step.
+                  {t("qas.qa1.description")}
                 </span>
               </Flex>
             </Flex>
@@ -171,13 +157,10 @@ export default function Home() {
                     color: "rgb(72, 153, 247)",
                   }}
                 >
-                  How we do it
+                  {t("qas.qa2.title")}
                 </span>
                 <span style={{ color: "black", lineHeight: 1.6 }}>
-                  You browse, choose, connect; sign, track, and pay. We make
-                  sure to keep it prompt, reliable, and catered to your needs.
-                  Because information and transparency are often neglected, we
-                  made it a priority.
+                  {t("qas.qa2.description")}
                 </span>
               </Flex>
             </Flex>
@@ -195,21 +178,17 @@ export default function Home() {
                     color: "rgb(72, 153, 247)",
                   }}
                 >
-                  Who we serve
+                  {t("qas.qa3.title")}
                 </span>
                 <span style={{ color: "black", lineHeight: 1.6 }}>
-                  Individuals and SMB’s who seek the completion of small-medium
-                  sized tasks, recurrent or non-recurrent. Contractors, both
-                  individuals and businesses, with expertise in the tangent
-                  sub-industries of domestic services, looking to expand their
-                  operations, while adhering to our standards.
+                  {t("qas.qa3.description")}
                 </span>
               </Flex>
             </Flex>
           </Flex>
         </Flex>
       </Flex>
-      <div className="footer">© 2025 ASAC. All rights reserved</div>
+      <div className="footer">© 2025 ASAC. {t("allRights")}</div>
     </div>
   );
 }
