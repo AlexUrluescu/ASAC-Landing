@@ -55,7 +55,6 @@ export default function Home() {
                 position: "relative",
                 borderRadius: 10,
                 overflow: "hidden",
-                backgroundColor: "red",
                 height: "100%",
               }}
             >
