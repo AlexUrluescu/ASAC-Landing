@@ -185,3 +185,9 @@ body {
     font-size: 30px;
   }
 }
+
+@media (max-width: 400px) {
+  .subTitle {
+    font-size: 26px;
+  }
+}
