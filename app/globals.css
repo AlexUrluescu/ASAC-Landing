@@ -95,12 +95,22 @@ body {
   width: 80%;
 }
 
+.content-container-client {
+  padding: 50px;
+  width: 80%;
+}
+
 .qa-container {
   background-color: rgb(72, 153, 247);
   border-radius: 15px;
   width: 80%;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
   overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.qa-container:hover {
+  transform: scale(1.01);
 }
 
 .carouser-item-container {
@@ -129,6 +139,32 @@ body {
   font-weight: 700;
   color: black;
   position: relative;
+}
+
+.client-text1 {
+  font-size: 57px;
+  font-weight: 700;
+}
+
+.client-text2 {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.client-text3 {
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.container-desc-client {
+  width: 50%;
+  background-color: white;
+  color: #1246d6;
+  gap: 90px;
+}
+
+.container-img-client {
+  width: 50%;
 }
 
 @media (max-width: 970px) {
@@ -166,6 +202,52 @@ body {
   }
 }
 
+@media (max-width: 860px) {
+  .client-text1 {
+    font-size: 47px;
+    font-weight: 700;
+  }
+
+  .client-text2 {
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .client-text3 {
+    font-size: 21px;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 700px) {
+  .content-container-client {
+    flex-direction: column-reverse;
+    align-items: center;
+
+    padding: 0;
+  }
+
+  .container-desc-client {
+    width: 100%;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .container-img-client {
+    width: 100%;
+  }
+
+  .client-text1 {
+    text-align: center;
+  }
+  .client-text2 {
+    text-align: center;
+  }
+  .client-text3 {
+    text-align: center;
+  }
+}
+
 @media (max-width: 440px) {
   .wrapper-nav {
     width: 85%;
@@ -183,6 +265,18 @@ body {
   }
   .subTitle {
     font-size: 30px;
+  }
+
+  .client-text2 {
+    font-size: 26px;
+  }
+
+  .client-text2 {
+    font-size: 22px;
+  }
+
+  .client-text3 {
+    font-size: 19px;
   }
 }
 

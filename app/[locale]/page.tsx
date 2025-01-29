@@ -3,11 +3,13 @@ import Image from "next/image";
 import "antd/dist/reset.css";
 import ServiceCarousel from "@/components/ServiceCarousel";
 import CustomModal from "@/components/CustomModal";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import LocalSwitcher from "@/components/LocalSwitcher";
 
 export default function Home() {
   const t = useTranslations("home");
+  const locale = useLocale();
+
   return (
     <div>
       <Flex vertical className="main-container">
@@ -43,7 +45,14 @@ export default function Home() {
               <Flex className="title" justify="center">
                 {t("title")}
               </Flex>
-              <Flex style={{ textAlign: "center", lineHeight: 1.6 }}>
+              <Flex
+                style={{
+                  textAlign: "center",
+                  fontSize: 17,
+                  fontWeight: 500,
+                  lineHeight: 1.6,
+                }}
+              >
                 {t("description")}
               </Flex>
             </Flex>
@@ -103,7 +112,9 @@ export default function Home() {
             width: "100%",
             color: "white",
           }}
-          justify="center"
+          align="center"
+          vertical
+          gap={70}
         >
           <Flex className="content-container" vertical gap={50} align="center">
             <div className="subTitle">
@@ -127,7 +138,12 @@ export default function Home() {
               <Flex
                 vertical
                 gap={20}
-                style={{ backgroundColor: "white", marginLeft: 5, padding: 20 }}
+                style={{
+                  backgroundColor: "white",
+                  marginLeft: 5,
+                  padding: 20,
+                  width: "100%",
+                }}
               >
                 <span
                   style={{
@@ -138,16 +154,22 @@ export default function Home() {
                 >
                   {t("qas.qa1.title")}
                 </span>
-                <span style={{ color: "black", lineHeight: 1.6 }}>
-                  {t("qas.qa1.description")}
-                </span>
+                <span
+                  style={{ color: "black", lineHeight: 1.6 }}
+                  dangerouslySetInnerHTML={{ __html: t("qas.qa1.description") }}
+                />
               </Flex>
             </Flex>
             <Flex className="qa-container">
               <Flex
                 vertical
                 gap={20}
-                style={{ backgroundColor: "white", marginLeft: 5, padding: 20 }}
+                style={{
+                  backgroundColor: "white",
+                  marginLeft: 5,
+                  padding: 20,
+                  width: "100%",
+                }}
               >
                 <span
                   style={{
@@ -158,9 +180,10 @@ export default function Home() {
                 >
                   {t("qas.qa2.title")}
                 </span>
-                <span style={{ color: "black", lineHeight: 1.6 }}>
-                  {t("qas.qa2.description")}
-                </span>
+                <span
+                  style={{ color: "black", lineHeight: 1.6 }}
+                  dangerouslySetInnerHTML={{ __html: t("qas.qa2.description") }}
+                />
               </Flex>
             </Flex>
 
@@ -168,7 +191,12 @@ export default function Home() {
               <Flex
                 vertical
                 gap={20}
-                style={{ backgroundColor: "white", marginLeft: 5, padding: 20 }}
+                style={{
+                  backgroundColor: "white",
+                  marginLeft: 5,
+                  padding: 20,
+                  width: "100%",
+                }}
               >
                 <span
                   style={{
@@ -179,9 +207,32 @@ export default function Home() {
                 >
                   {t("qas.qa3.title")}
                 </span>
-                <span style={{ color: "black", lineHeight: 1.6 }}>
-                  {t("qas.qa3.description")}
-                </span>
+                <span
+                  style={{ color: "black", lineHeight: 1.6 }}
+                  dangerouslySetInnerHTML={{ __html: t("qas.qa3.description") }}
+                />
+              </Flex>
+            </Flex>
+          </Flex>
+          <Flex justify="center" style={{ width: "100%" }}>
+            <Flex className="content-container-client" gap={30}>
+              <Flex justify="center" className="container-img-client">
+                <img
+                  style={{ marginTop: 20, height: "100%", width: "100%" }}
+                  className="client-image"
+                  src={`/client-desc-${locale}.png`}
+                  alt=""
+                />
+              </Flex>
+              <Flex className="container-desc-client" vertical justify="center">
+                <Flex vertical gap={10}>
+                  <span className="client-text1">{t("client.text1")}</span>
+                  <span className="client-text2">{t("client.text2")}</span>
+                </Flex>
+                <span
+                  className="client-text3"
+                  dangerouslySetInnerHTML={{ __html: t("client.text3") }}
+                />
               </Flex>
             </Flex>
           </Flex>

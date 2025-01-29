@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "Făcut corect, de fiecare dată.",
-    "description": "Platforma noastră de servicii interne te conectează instantaneu cu profesioniști calificați — fără speculații, prețuri clare și progres transparent — asigurând servicii fără stres, la îndemâna ta.",
+    "title": "Eficacitate, de fiecare dată.",
+    "description": "Platforma noastră de servicii casnice facilitează - cert, clar și transparent - interacțiunea dintre clienți și contractori, asigurând rezultate la îndemână",
     "buttons": {
       "contact": "Contactează-ne",
       "register": "Înregistrează-te",
@@ -25,16 +25,21 @@
     "qas": {
       "qa1": {
         "title": "Ce facem",
-        "description": "Conectăm clienții cu antreprenori profesioniști pentru a satisface întreaga gamă de nevoi ale fiecărei locuințe. Ne asigurăm că fiecare proiect este finalizat corect, eficient și eficace. De la navigarea serviciilor, la negocierea ofertei, până la urmărirea proiectului, țintim excelența la fiecare pas."
+        "description": "Conectăm clienții cu profesioniști din industrie astfel încât să întrunim întregul spectru de nevoi. <br /> Fiecare proiect este tratat just și eficient. Premiza noastră este de a menține pragul de excelență la fiecare pas, de la căutarea serviciilor, la urmărirea progresului și până la concretizarea acestora."
       },
       "qa2": {
         "title": "Cum o facem",
-        "description": "Tu navighezi, alegi, te conectezi; semnezi, urmărești și plătești. Ne asigurăm că procesul este prompt, fiabil și adaptat nevoilor tale. Deoarece informațiile și transparența sunt adesea neglijate, le-am făcut o prioritate."
+        "description": "Clientul caută, alege, vorbește, semnează, urmărește, plătește. <br /> Noi ne asigurăm că acesta primește, toate acestea într-o manieră eficientă și atentă. <br /> Transparența și accesul la informație sunt adesea neglijate, însă pentru noi se află în prim plan."
       },
       "qa3": {
         "title": "Cui ne adresăm",
-        "description": "Persoanelor fizice și IMM-uri care doresc finalizarea unor sarcini mici și medii, recurente sau nerecurente. Antreprenori, atât persoane fizice, cât și afaceri, cu expertiză în subdomeniile conexe serviciilor interne, care doresc să-și extindă operațiunile, respectându-ne standardele."
+        "description": "Persoanelor individuale, de la studenți la familii, dar și IMM-urilor, care doresc îndeplinirea unor sarcini sau proiecte, atât recurente, cât și non-recurente. <br /> Contractorilor, atât firmelor, cât și celor individuali, cu expertiza și experiența în subindustriile serviciilor casnice, care doresc să își extindă activitatea și să își eficientizeze procesele interne, aderând la standardele noastre."
       }
+    },
+    "client": {
+      "text1": "Mai ușor ca niciodată",
+      "text2": "să găsești serviciul de care ai nevoie",
+      "text3": "Găsește, plătește și pleacă – toate <br /> într-un singur proces fără întreruperi"
     },
     "allRights": "Toate drepturile rezervate"
   }
