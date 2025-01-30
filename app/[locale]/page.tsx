@@ -214,7 +214,7 @@ export default function Home() {
               </Flex>
             </Flex>
           </Flex>
-          <Flex justify="center" style={{ width: "100%" }}>
+          {/* <Flex justify="center" style={{ width: "100%" }}>
             <Flex className="content-container-client" gap={30}>
               <Flex justify="center" className="container-img-client">
                 <img
@@ -235,7 +235,7 @@ export default function Home() {
                 />
               </Flex>
             </Flex>
-          </Flex>
+          </Flex> */}
         </Flex>
       </Flex>
       <div className="footer">© 2025 ASAC. {t("allRights")}</div>
