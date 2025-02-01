@@ -3,12 +3,19 @@ import { ChangeEvent, useState } from "react";
 import { Modal, Button, Input, Flex, message } from "antd";
 import { useTranslations } from "next-intl";
 import "../app/globals.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const { TextArea } = Input;
 
 interface ICustomModal {
   buttonText: string;
   showInfo: boolean;
+}
+
+enum UserTypes {
+  CLIENT = "Client",
+  COMPANY = "Company",
 }
 
 const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
@@ -18,6 +25,8 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
   const [content, setContent] = useState<string>("");
   const [messageApi, contextHolder] = message.useMessage();
   const [correctEmail, setCorrectEmail] = useState<boolean>(true);
+  const [step, setStep] = useState<number>(1);
+  const [userType, setUserType] = useState<UserTypes | null>(null);
 
   const success = () => {
     messageApi.open({
@@ -48,6 +57,8 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
       const payload = {
         email: email,
         info: content,
+        date: new Date(),
+        user: userType,
       };
 
       const res = await fetch("https://asac-be.onrender.com/emailInfoRoutes", {
@@ -69,9 +80,12 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
       console.error(error);
     }
   };
+
   const handleCancel = () => {
     setIsModalOpen(false);
     resetForm();
+    setStep(1);
+    setUserType(null);
   };
 
   const handleInputEmaailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -106,59 +120,142 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
       </Button>
       <Modal
         width={700}
-        title={
-          <span style={{ fontWeight: 600, fontSize: 20 }}>{buttonText}</span>
-        }
         open={isModalOpen}
-        onOk={handleOk}
+        footer={false}
         onCancel={handleCancel}
-        okText={t("buttons.send")}
-        cancelText={t("buttons.cancel")}
-        okButtonProps={{ disabled: email === "" || !correctEmail }}
       >
         <Flex style={{ padding: "20px 0px" }} vertical gap={20}>
-          <Input
-            className="inputs"
-            value={email}
-            style={{
-              border:
-                email === ""
-                  ? "1px solid #d9d9d9"
-                  : correctEmail
-                  ? "1px solid green"
-                  : "1px solid red",
-              outline: "none",
-            }}
-            onFocus={(e) => {
-              if (email !== "") {
-                e.target.style.border = correctEmail
-                  ? "1px solid green"
-                  : "1px solid red";
-              } else {
-                e.target.style.border = "1px solid #096dd9";
-              }
-            }}
-            onBlur={(e) => {
-              if (email !== "") {
-                e.target.style.border = correctEmail
-                  ? "1px solid green"
-                  : "1px solid red";
-              } else {
-                e.target.style.border = "1px solid #d9d9d9";
-              }
-            }}
-            onChange={(e) => handleInputEmaailChange(e)}
-            placeholder={t("placeholders.yourEmail")}
-          />
+          {step === 1 ? (
+            <Flex vertical gap={30}>
+              <Flex justify="center">
+                <span style={{ fontSize: 27, fontWeight: 600 }}>
+                  {t("modal.title1")}
+                </span>
+              </Flex>
+              <Flex justify="center" gap={20} style={{ height: 200 }}>
+                <Flex
+                  onClick={() => {
+                    setUserType(UserTypes.CLIENT);
+                    setStep(2);
+                  }}
+                  className="c-container-type-user"
+                  justify="center"
+                  align="center"
+                >
+                  <span style={{ fontSize: 25, fontWeight: 400 }}>
+                    {" "}
+                    {t("modal.client")}
+                  </span>
+                </Flex>
+                <Flex
+                  onClick={() => {
+                    setUserType(UserTypes.COMPANY);
+                    setStep(2);
+                  }}
+                  className="c-container-type-user"
+                  justify="center"
+                  align="center"
+                >
+                  <span style={{ fontSize: 25, fontWeight: 400 }}>
+                    {" "}
+                    {t("modal.company")}
+                  </span>
+                </Flex>
+              </Flex>
+            </Flex>
+          ) : (
+            <Flex vertical gap={20}>
+              <Flex
+                style={{ position: "relative" }}
+                justify="center"
+                align="center"
+                onClick={() => {
+                  setUserType(null);
+                  setStep(1);
+                }}
+              >
+                <Flex
+                  align="center"
+                  gap={10}
+                  style={{ position: "absolute", left: 0, top: "25%" }}
+                  className="c-container-back"
+                >
+                  <FontAwesomeIcon icon={faArrowLeft} />
+                  <span> {t("modal.back")}</span>
+                </Flex>
+                <span style={{ fontSize: 27, fontWeight: 600 }}>
+                  {t("modal.title2")}
+                </span>
+              </Flex>
+              <Flex vertical gap={50}>
+                <Flex vertical gap={20}>
+                  <Flex vertical gap={5}>
+                    <span style={{ fontSize: 16, fontWeight: 500 }}>
+                      {" "}
+                      {t("modal.email")}
+                    </span>
+                    <Input
+                      className="inputs"
+                      value={email}
+                      style={{
+                        border:
+                          email === ""
+                            ? "1px solid #d9d9d9"
+                            : correctEmail
+                            ? "1px solid green"
+                            : "1px solid red",
+                        outline: "none",
+                      }}
+                      onFocus={(e) => {
+                        if (email !== "") {
+                          e.target.style.border = correctEmail
+                            ? "1px solid green"
+                            : "1px solid red";
+                        } else {
+                          e.target.style.border = "1px solid #096dd9";
+                        }
+                      }}
+                      onBlur={(e) => {
+                        if (email !== "") {
+                          e.target.style.border = correctEmail
+                            ? "1px solid green"
+                            : "1px solid red";
+                        } else {
+                          e.target.style.border = "1px solid #d9d9d9";
+                        }
+                      }}
+                      onChange={(e) => handleInputEmaailChange(e)}
+                      placeholder={"john@gmail.com"}
+                    />
+                  </Flex>
 
-          {showInfo ? (
-            <TextArea
-              onChange={(e) => handleInputContentChange(e)}
-              style={{ height: 100 }}
-              placeholder={t("placeholders.tellUs")}
-              value={content}
-            />
-          ) : null}
+                  {showInfo ? (
+                    <Flex vertical gap={5}>
+                      <span style={{ fontSize: 16, fontWeight: 500 }}>
+                        {t("modal.message")}
+                      </span>
+                      <TextArea
+                        onChange={(e) => handleInputContentChange(e)}
+                        style={{ height: 100 }}
+                        placeholder={t("placeholders.tellUs")}
+                        value={content}
+                      />
+                    </Flex>
+                  ) : null}
+                </Flex>
+
+                <Flex justify="center">
+                  <Button
+                    onClick={() => handleOk()}
+                    style={{ width: 100, fontSize: 16, fontWeight: 500 }}
+                    type="primary"
+                  >
+                    {t("modal.send")}
+                  </Button>
+                </Flex>
+              </Flex>
+            </Flex>
+          )}
         </Flex>
       </Modal>
     </>

@@ -41,6 +41,16 @@
       "text2": "să găsești serviciul de care ai nevoie",
       "text3": "Găsește, plătește și pleacă – toate <br /> într-un singur proces fără întreruperi"
     },
+    "modal": {
+      "title1": "Continuă ca",
+      "title2": "Completează",
+      "client": "Client",
+      "company": "Companie",
+      "back": "Înapoi",
+      "email": "Email",
+      "message": "Mesaj",
+      "send": "Trimite"
+    },
     "allRights": "Toate drepturile rezervate"
   }
 }

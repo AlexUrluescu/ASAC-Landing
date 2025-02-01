@@ -167,6 +167,30 @@ body {
   width: 50%;
 }
 
+.c-container-type-user {
+  width: 40%;
+  border-radius: 8px;
+  border: 1px solid gainsboro;
+  cursor: pointer;
+  background-color: white;
+}
+
+.c-container-type-user:hover {
+  border: 1px solid #1890ff;
+  background-color: #1890ff;
+  color: white;
+}
+
+.c-container-back {
+  color: black;
+}
+
+.c-container-back:hover {
+  color: #1890ff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 @media (max-width: 970px) {
   .arrow {
     display: none;

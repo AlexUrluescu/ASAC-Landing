@@ -41,6 +41,16 @@
       "text2": "to find the service you need",
       "text3": "Find, pay, and go – all in one seamless process"
     },
+    "modal": {
+      "title1": "Continue as",
+      "title2": "Complete",
+      "client": "Client",
+      "company": "Company",
+      "back": "Back",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send"
+    },
     "allRights": "All rights reserved"
   }
 }

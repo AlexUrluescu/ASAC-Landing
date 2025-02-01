@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "@ant-design/nextjs-registry": "^1.0.1",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@types/antd": "^1.0.0",
     "antd": "^5.20.1",
     "next": "14.2.5",
+    "next-intl": "^3.19.1",
     "react": "^18",
-    "react-dom": "^18",
-    "next-intl": "^3.19.1"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",
