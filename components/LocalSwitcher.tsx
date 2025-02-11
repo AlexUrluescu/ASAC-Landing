@@ -12,7 +12,7 @@ const LocalSwitcher = () => {
 
   const handleSelectChange = (language: any) => {
     const nextLocale = language;
-    const pathWithoutLocale = pathname.replace(/^\/(en|ro)/, "");
+    const pathWithoutLocale = pathname.replace(/^\/(en|ro|es)/, "");
 
     const newPath = `/${nextLocale}${pathWithoutLocale}`;
 
@@ -30,6 +30,7 @@ const LocalSwitcher = () => {
       options={[
         { value: "ro", label: "RO" },
         { value: "en", label: "EN" },
+        { value: "es", label: "ES" },
       ]}
     />
   );

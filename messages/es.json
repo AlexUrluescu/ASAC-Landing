@@ -1,0 +1,56 @@
+{
+  "home": {
+    "title": "Bien hecho, siempre.",
+    "description": "Nuestra plataforma de servicios domésticos le conecta instantáneamente con profesionales cualificados; sin conjeturas, precios claros y progreso transparente; garantizando servicios sin estrés al alcance de su mano.",
+    "buttons": {
+      "contact": "Contáctanos",
+      "register": "Regístrate aquí",
+      "cancel": "Cancelar",
+      "send": "Enviar"
+    },
+    "placeholders": {
+      "yourEmail": "Tu correo electrónico",
+      "tellUs": "Cuéntanos"
+    },
+    "coming": "Próximamente",
+    "subTitle": "Buscar un servicio",
+    "services": {
+      "label1": "Mejoras del hogar",
+      "label2": "Mudanza y organización",
+      "label3": "Servicios de limpieza del hogar",
+      "label4": "Reparaciones y mantenimiento",
+      "label5": "Servicios de control de plagas",
+      "label6": "Jardinería y cuidado del césped"
+    },
+    "qas": {
+      "qa1": {
+        "title": "¿Qué hacemos?",
+        "description": "Ponemos en contacto a clientes con contratistas profesionales para satisfacer las necesidades de sus hogares. <br /> Nos aseguramos de que cada proyecto se realice de forma justa, eficaz y eficiente. Desde la búsqueda de servicios, pasando por la negociación, hasta el seguimiento del proyecto, buscamos la excelencia en cada paso."
+      },
+      "qa2": {
+        "title": "¿Cómo lo hacemos?",
+        "description": "Usted busca, elige, se conecta; firma, realiza el seguimiento y paga. <br />Nos aseguramos de que todo sea rápido, fiable y adaptado a sus necesidades. <br />Porque la información y la transparencia a menudo se descuidan, hemos hecho de ello una prioridad."
+      },
+      "qa3": {
+        "title": "¿A quién servimos?",
+        "description": "Particulares y PYMES que buscan la realización de pequeñas y medianas tareas, recurrentes o no recurrentes. <br />Contratistas, tanto particulares como empresas, con experiencia en las subindustrias tangentes de los servicios domésticos, que buscan ampliar sus operaciones."
+      }
+    },
+    "client": {
+      "text1": "It’s never been easier",
+      "text2": "to find the service you need",
+      "text3": "Find, pay, and go – all in one seamless process"
+    },
+    "modal": {
+      "title1": "Continuar como",
+      "title2": "Completar",
+      "client": "Cliente",
+      "company": "Empresa",
+      "back": "Atrás",
+      "email": "Email",
+      "message": "Mensaje",
+      "send": "Enviar"
+    },
+    "allRights": "Todos los derechos reservados"
+  }
+}
