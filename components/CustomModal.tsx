@@ -1,7 +1,7 @@
 "use client";
 import { ChangeEvent, useState } from "react";
 import { Modal, Button, Input, Flex, message } from "antd";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import "../app/globals.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -11,6 +11,7 @@ const { TextArea } = Input;
 interface ICustomModal {
   buttonText: string;
   showInfo: boolean;
+  buttonTriggerStyle: any;
 }
 
 enum UserTypes {
@@ -18,7 +19,11 @@ enum UserTypes {
   COMPANY = "Company",
 }
 
-const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
+const CustomModal: React.FC<ICustomModal> = ({
+  buttonText,
+  showInfo,
+  buttonTriggerStyle,
+}) => {
   const t = useTranslations("home");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [email, setEmail] = useState<string>("");
@@ -27,11 +32,12 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
   const [correctEmail, setCorrectEmail] = useState<boolean>(true);
   const [step, setStep] = useState<number>(1);
   const [userType, setUserType] = useState<UserTypes | null>(null);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const success = () => {
     messageApi.open({
       type: "success",
-      content: "Your message has been sent successfully",
+      content: t("messageSentSuccess"),
     });
   };
 
@@ -51,8 +57,6 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
     setIsModalOpen(true);
   };
   const handleOk = async () => {
-    setIsModalOpen(false);
-
     try {
       const payload = {
         email: email,
@@ -69,16 +73,65 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
         body: JSON.stringify(payload),
       });
 
+      console.log("res", res);
+
       if (!res.ok) {
         error();
       }
 
-      setEmail("");
-      success();
-      resetForm();
+      if (res.ok) {
+        await handleSendEmail(showInfo);
+        await handleSendEmailToAdmin(showInfo);
+
+        setEmail("");
+        success();
+        resetForm();
+
+        setIsSuccess(true);
+        setTimeout(() => {
+          setIsSuccess(false);
+          setIsModalOpen(false);
+        }, 3000);
+      }
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const handleSendEmail = async (showInfo: boolean) => {
+    const emailSubject = showInfo
+      ? "ASAC - Contact Us confirmation"
+      : "ASAC - Register Complete";
+    const emailMessage = showInfo
+      ? t("emailMessages.contactThanks")
+      : t("emailMessages.signupThanks");
+    await fetch("/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        to: email,
+        subject: emailSubject,
+        message: emailMessage,
+      }),
+    });
+  };
+
+  const handleSendEmailToAdmin = async (showInfo: boolean) => {
+    const emailSubject = showInfo
+      ? "ASAC - Contact Us"
+      : "ASAC - Register Complete";
+    const emailMessage = showInfo
+      ? `The user with the email ${email} has successfully complete the Contact Us process for type ${userType}. With the following description: ${content}`
+      : `The user with the email ${email} has successfully complete the Register process for type ${userType}.`;
+    await fetch("/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        to: "vulturudav@gmail.com",
+        subject: emailSubject,
+        message: emailMessage,
+      }),
+    });
   };
 
   const handleCancel = () => {
@@ -107,11 +160,20 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
     setContent(value);
   };
 
+  const buttonStyle = {
+    width: 100,
+    fontSize: 16,
+    fontWeight: 500,
+    backgroundColor: isSuccess ? "#4CAF50" : undefined, // green background on success
+    transition: "background-color 0.3s ease",
+    animation: isSuccess ? "pulse 1s infinite" : "none",
+  };
+
   return (
     <>
       {contextHolder}
       <Button
-        style={{}}
+        style={buttonTriggerStyle}
         className="triger-button"
         type="primary"
         onClick={showModal}
@@ -245,11 +307,7 @@ const CustomModal: React.FC<ICustomModal> = ({ buttonText, showInfo }) => {
                 </Flex>
 
                 <Flex justify="center">
-                  <Button
-                    onClick={() => handleOk()}
-                    style={{ width: 100, fontSize: 16, fontWeight: 500 }}
-                    type="primary"
-                  >
+                  <Button onClick={handleOk} style={buttonStyle} type="primary">
                     {t("modal.send")}
                   </Button>
                 </Flex>

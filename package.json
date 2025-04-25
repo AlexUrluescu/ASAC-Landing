@@ -13,6 +13,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@sendgrid/mail": "^8.1.5",
     "@types/antd": "^1.0.0",
     "antd": "^5.20.1",
     "next": "14.2.5",

@@ -51,6 +51,11 @@
       "message": "Mensaje",
       "send": "Enviar"
     },
-    "allRights": "Todos los derechos reservados"
+    "allRights": "Todos los derechos reservados",
+    "emailMessages": {
+      "contactThanks": "Hola,\n\n¡Gracias por contactarnos! Estamos encantados de tenerte con nosotros.\n\nEstamos ultimando los detalles de la plataforma y no podemos esperar para mostrarte en qué hemos estado trabajando. Serás el primero en saber cuando estemos en línea.\n\nHasta pronto,\nEquipo Asac",
+      "signupThanks": "Hola,\n\n¡Gracias por registrarte! Estamos encantados de tenerte con nosotros.\n\nEstamos ultimando los detalles de la plataforma y no podemos esperar para mostrarte en qué hemos estado trabajando. Serás el primero en saber cuando estemos en línea.\n\nHasta pronto,\nEquipo Asac"
+    },
+    "messageSentSuccess": "Tu mensaje ha sido enviado con éxito"
   }
 }

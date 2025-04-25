@@ -51,6 +51,11 @@
       "message": "Mesaj",
       "send": "Trimite"
     },
-    "allRights": "Toate drepturile rezervate"
+    "allRights": "Toate drepturile rezervate",
+    "emailMessages": {
+      "contactThanks": "Salut,\n\nÎți mulțumim că ne-ai contactat — suntem încântați să te avem alături!\n\nPunem ultimele detalii la platformă și abia așteptăm să-ți arătăm ce am pregătit. Vei fi printre primii care află când lansăm.\n\nPe curând,\nEchipa Asac",
+      "signupThanks": "Salut,\n\nÎți mulțumim că te-ai înregistrat — suntem încântați să te avem alături!\n\nPunem ultimele detalii la platformă și abia așteptăm să-ți arătăm ce am pregătit. Vei fi printre primii care află când lansăm.\n\nPe curând,\nEchipa Asac"
+    },
+    "messageSentSuccess": "Mesajul tău a fost trimis cu succes"
   }
 }

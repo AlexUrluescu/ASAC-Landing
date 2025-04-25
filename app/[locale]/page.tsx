@@ -35,7 +35,11 @@ export default function Home() {
             </span>
             <Flex align="center" gap={10}>
               <LocalSwitcher />
-              <CustomModal buttonText={t("buttons.contact")} showInfo={true} />
+              <CustomModal
+                buttonText={t("buttons.contact")}
+                showInfo={true}
+                buttonTriggerStyle={{ fontSize: 17, width: 140, height: 37 }}
+              />
             </Flex>
           </Flex>
         </Flex>
@@ -88,7 +92,7 @@ export default function Home() {
             align="center"
             style={{ position: "relative" }}
             vertical
-            gap={20}
+            gap={25}
           >
             <Image
               className="arrow"
@@ -98,11 +102,21 @@ export default function Home() {
               height={65}
               alt=""
             />
-            <span style={{ fontSize: 25, color: "white", fontWeight: 600 }}>
+            <span
+              style={{
+                fontSize: 23,
+                color: "white",
+                fontWeight: 600,
+              }}
+            >
               {t("coming")} ...
             </span>
 
-            <CustomModal buttonText={t("buttons.register")} showInfo={false} />
+            <CustomModal
+              buttonText={t("buttons.register")}
+              showInfo={false}
+              buttonTriggerStyle={{ fontSize: 19, width: 180, height: 45 }}
+            />
           </Flex>
         </Flex>
       </Flex>
