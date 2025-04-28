@@ -65,13 +65,16 @@ const CustomModal: React.FC<ICustomModal> = ({
         user: userType,
       };
 
-      const res = await fetch("https://asac-be.onrender.com/emailInfoRoutes", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+      const res = await fetch(
+        "https://asac-be-918428779878.europe-west3.run.app/emailInfoRoutes",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
 
       console.log("res", res);
 
