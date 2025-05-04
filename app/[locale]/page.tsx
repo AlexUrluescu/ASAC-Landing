@@ -273,7 +273,7 @@ export default function Home() {
 
           <span>
             <Link href={`/${locale}/terms-and-conditions`}>
-              Terms and Conditions
+              {t("terms.title")}
             </Link>
           </span>
         </Flex>

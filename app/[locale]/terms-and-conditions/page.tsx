@@ -28,7 +28,7 @@ export default function TermsPage() {
           <Flex justify="space-between">
             <Flex gap={10} align="center">
               <ArrowLeftOutlined />
-              <Link href={`${locale}`}>
+              <Link href={`/${locale}`}>
                 <span style={{ fontSize: 18 }}>{t("terms.back")}</span>
               </Link>
             </Flex>
