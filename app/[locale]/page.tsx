@@ -5,6 +5,8 @@ import ServiceCarousel from "@/components/ServiceCarousel";
 import CustomModal from "@/components/CustomModal";
 import { useLocale, useTranslations } from "next-intl";
 import LocalSwitcher from "@/components/LocalSwitcher";
+import { LinkedinOutlined } from "@ant-design/icons";
+import Link from "next/link";
 
 export default function Home() {
   const t = useTranslations("home");
@@ -252,7 +254,29 @@ export default function Home() {
           </Flex> */}
         </Flex>
       </Flex>
-      <div className="footer">© 2025 ASAC. {t("allRights")}</div>
+      <div className="footer">
+        <Flex
+          justify="center"
+          gap={50}
+          style={{ padding: 10, marginBottom: 20 }}
+        >
+          <Flex align="center" gap={5}>
+            <LinkedinOutlined style={{ fontSize: 23, color: "blue" }} />
+            <Link
+              href="https://www.linkedin.com/company/asac-app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ASAC LinkedIn
+            </Link>
+          </Flex>
+
+          <span>
+            <Link href={"/terms-and-conditions"}>Terms and Conditions</Link>
+          </span>
+        </Flex>
+        © 2025 ASAC. {t("allRights")}
+      </div>
     </div>
   );
 }
