@@ -272,9 +272,7 @@ export default function Home() {
           </Flex>
 
           <span>
-            <Link href={`/${locale}/terms-and-conditions`}>
-              {t("terms.title")}
-            </Link>
+            <Link href={`/${locale}/terms-and-conditions`}>{t("terms")}</Link>
           </span>
         </Flex>
         © 2025 ASAC. {t("allRights")}

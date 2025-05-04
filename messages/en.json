@@ -56,7 +56,8 @@
       "contactThanks": "Hi there,\n\nThanks for Contact Us — we’re thrilled to have you on board!\n\nWe’re putting the final touches on the platform and can’t wait to show you what we’ve been working on. You’ll be the first to know the moment we go live.\n\nTalk soon,\nTeam Asac",
       "signupThanks": "Hi there,\n\nThanks for signing up — we’re thrilled to have you on board!\n\nWe’re putting the final touches on the platform and can’t wait to show you what we’ve been working on. You’ll be the first to know the moment we go live.\n\nTalk soon,\nTeam Asac"
     },
-    "messageSentSuccess": "Your message has been sent successfully"
+    "messageSentSuccess": "Your message has been sent successfully",
+    "terms": "Terms and conditions"
   },
   "terms": {
     "back": "Back",
