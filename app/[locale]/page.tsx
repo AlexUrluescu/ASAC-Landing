@@ -256,26 +256,37 @@ export default function Home() {
       </Flex>
       <div className="footer">
         <Flex
+          align="center"
           justify="center"
           gap={50}
-          style={{ padding: 10, marginBottom: 20 }}
+          style={{ padding: 10, marginBottom: 20, color: "white" }}
         >
           <Flex align="center" gap={5}>
-            <LinkedinOutlined style={{ fontSize: 23, color: "blue" }} />
+            <LinkedinOutlined style={{ fontSize: 23, color: "white" }} />
             <Link
               href="https://www.linkedin.com/company/asac-app"
               target="_blank"
               rel="noopener noreferrer"
+              // style={{ color: "white" }}
+              className="link"
             >
               ASAC LinkedIn
             </Link>
           </Flex>
 
           <span>
-            <Link href={`/${locale}/terms-and-conditions`}>{t("terms")}</Link>
+            <Link
+              // style={{ color: "white" }}
+              className="link"
+              href={`/${locale}/terms-and-conditions`}
+            >
+              {t("terms")}
+            </Link>
           </span>
         </Flex>
-        © 2025 ASAC. {t("allRights")}
+        <span style={{ color: "white", marginTop: 50 }}>
+          © 2025 ASAC. {t("allRights")}
+        </span>
       </div>
     </div>
   );

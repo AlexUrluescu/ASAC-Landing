@@ -24,7 +24,7 @@ export default function TermsPage() {
         }}
         vertical
       >
-        <Flex vertical>
+        <Flex vertical gap={30}>
           <Flex justify="space-between">
             <Flex gap={10} align="center">
               <ArrowLeftOutlined />
@@ -34,11 +34,9 @@ export default function TermsPage() {
             </Flex>
             <LocalSwitcher />
           </Flex>
-          <Flex align="center" vertical gap={2}>
-            <span style={{ fontSize: 40, fontWeight: 600 }}>
-              {t("terms.title")}
-            </span>
-            <span>{t("terms.effectiveDate")}</span>
+          <Flex className="terms-header-text" align="center" vertical gap={2}>
+            <span style={{ fontWeight: 600 }}>{t("terms.title")}</span>
+            <span style={{ fontSize: 18 }}>{t("terms.effectiveDate")}</span>
           </Flex>
         </Flex>
 

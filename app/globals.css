@@ -43,6 +43,18 @@ body {
   background-color: rgb(236, 245, 255);
 }
 
+.terms-header-text {
+  font-size: 40px;
+}
+
+.link {
+  color: white;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
 .footer {
   /* background: rgb(72, 153, 247); */
   /* background: linear-gradient(
@@ -53,8 +65,9 @@ body {
   /* height: 100px; */
   text-align: center;
   margin-top: 50px;
-  padding: 25px;
+  padding: 50px 25px;
   border-top: 1px solid rgb(230, 230, 230);
+  background: linear-gradient(135deg, #1246d6, #2f6cef, #60a5fa);
   /* color: white; */
 }
 
@@ -251,6 +264,10 @@ body {
     padding: 0;
   }
 
+  .terms-header-text {
+    font-size: 35px;
+  }
+
   .container-desc-client {
     width: 100%;
     align-items: center;
@@ -273,6 +290,10 @@ body {
 }
 
 @media (max-width: 440px) {
+  .terms-header-text {
+    text-align: center;
+    padding-bottom: 10px;
+  }
   .wrapper-nav {
     width: 85%;
   }
