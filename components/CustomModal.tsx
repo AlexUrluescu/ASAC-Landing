@@ -1,10 +1,11 @@
 "use client";
 import { ChangeEvent, useState } from "react";
-import { Modal, Button, Input, Flex, message } from "antd";
+import { Modal, Button, Input, Flex, message, Spin } from "antd";
 import { useLocale, useTranslations } from "next-intl";
 import "../app/globals.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { LoadingOutlined } from "@ant-design/icons";
 
 const { TextArea } = Input;
 
@@ -33,6 +34,7 @@ const CustomModal: React.FC<ICustomModal> = ({
   const [step, setStep] = useState<number>(1);
   const [userType, setUserType] = useState<UserTypes | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const success = () => {
     messageApi.open({
@@ -58,6 +60,7 @@ const CustomModal: React.FC<ICustomModal> = ({
   };
   const handleOk = async () => {
     try {
+      setIsLoading(true);
       const payload = {
         email: email,
         info: content,
@@ -89,6 +92,7 @@ const CustomModal: React.FC<ICustomModal> = ({
         setEmail("");
         success();
         resetForm();
+        setIsLoading(false);
 
         setIsSuccess(true);
         setTimeout(() => {
@@ -310,8 +314,16 @@ const CustomModal: React.FC<ICustomModal> = ({
                 </Flex>
 
                 <Flex justify="center">
-                  <Button onClick={handleOk} style={buttonStyle} type="primary">
-                    {t("modal.send")}
+                  <Button
+                    disabled={isLoading}
+                    onClick={handleOk}
+                    style={buttonStyle}
+                    type="primary"
+                  >
+                    {t("modal.send")}{" "}
+                    {isLoading ? (
+                      <Spin indicator={<LoadingOutlined spin />} />
+                    ) : null}
                   </Button>
                 </Flex>
               </Flex>
